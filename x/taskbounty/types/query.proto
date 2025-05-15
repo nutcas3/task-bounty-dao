@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package taskbounty;
+
+option go_package = "github.com/yourusername/dao-golang/x/taskbounty/types";
+
+import "gogoproto/gogo.proto";
+
+// Query service for the taskbounty module
+service Query {
+  // List all tasks
+  rpc Tasks(QueryTasksRequest) returns (QueryTasksResponse) {}
+
+  // Get a task by ID
+  rpc Task(QueryTaskRequest) returns (QueryTaskResponse) {}
+
+  // List tasks by status
+  rpc TasksByStatus(QueryTasksByStatusRequest) returns (QueryTasksByStatusResponse) {}
+
+  // List tasks by creator
+  rpc TasksByCreator(QueryTasksByCreatorRequest) returns (QueryTasksByCreatorResponse) {}
+
+  // List tasks by claimant
+  rpc TasksByClaimant(QueryTasksByClaimantRequest) returns (QueryTasksByClaimantResponse) {}
+}
+
+// Request and response messages
+message QueryTasksRequest {
+  // Add pagination if needed
+}
+
+message QueryTasksResponse {
+  repeated Task tasks = 1;
+}
+
+message QueryTaskRequest {
+  string id = 1;
+}
+
+message QueryTaskResponse {
+  Task task = 1;
+}
+
+message QueryTasksByStatusRequest {
+  string status = 1;
+}
+
+message QueryTasksByStatusResponse {
+  repeated Task tasks = 1;
+}
+
+message QueryTasksByCreatorRequest {
+  string creator = 1;
+}
+
+message QueryTasksByCreatorResponse {
+  repeated Task tasks = 1;
+}
+
+message QueryTasksByClaimantRequest {
+  string claimant = 1;
+}
+
+message QueryTasksByClaimantResponse {
+  repeated Task tasks = 1;
+}
+
+// Task message should match your main Task structure
+message Task {
+  string id = 1;
+  string creator = 2;
+  string title = 3;
+  string description = 4;
+  string bounty = 5;
+  string status = 6;
+  string claimant = 7;
+  string proof = 8;
+}

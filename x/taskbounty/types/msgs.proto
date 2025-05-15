@@ -1,0 +1,36 @@
+syntax = "proto3";
+package taskbounty.types;
+
+option go_package = "dao-golang/x/taskbounty/types";
+
+// MsgCreateTask defines a message to create a new task
+message MsgCreateTask {
+    string creator = 1;
+    string title = 2;
+    string description = 3;
+    string bounty = 4;
+}
+
+// MsgClaimTask defines a message to claim an existing task
+message MsgClaimTask {
+    string task_id = 1;
+    string claimer = 2;
+}
+
+// MsgSubmitProof defines a message to submit proof for a claimed task
+message MsgSubmitProof {
+    string task_id = 1;
+    string worker = 2;
+    string proof = 3;
+}
+
+// MsgApproveTask defines a message to approve a completed task
+message MsgApproveTask {
+    string task_id = 1;
+    string approver = 2;
+}
+
+// MsgCreateWallet defines a message to create a new wallet
+message MsgCreateWallet {
+    string owner = 1;
+}
