@@ -1,0 +1,8 @@
+network:
+  chain_id: "taskbounty-testnet"
+  rpc_endpoint: "http://localhost:26657"
+  grpc_endpoint: "localhost:9090"
+
+gas:
+  gas_price: "0.01stake"
+  gas_adjustment: 1.5
