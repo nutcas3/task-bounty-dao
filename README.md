@@ -73,8 +73,8 @@ A blockchain-powered decentralized task reward platform built with Go and Cosmos
 ## Integration Requirements
 
 ### Know Freedom Testnet
-- RPC Endpoint: https://node0.testnet.knowfreedom.io:26657
-- gRPC Endpoint: https://node0.testnet.knowfreedom.io:9090
+- RPC Endpoint: 
+- gRPC Endpoint: 
 - Chain ID: To be determined
 - Native Token: To be determined
 
